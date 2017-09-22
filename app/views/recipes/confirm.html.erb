@@ -1,0 +1,22 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_for(@recipe) do |f| %>
+<%= f.hidden_field :name %>
+<%= f.hidden_field :explain %>
+<%= f.hidden_field :ingredients %>
+<%= f.hidden_field :directions %>
+
+<p><%= @recipe.name %></p>
+<p><%= @recipe.explain %></p>
+<p><%= @recipe.ingredients %></p>
+<p><%= @recipe.directions %></p>
+<%= f.submit "投稿する" %>
+<% end %>
+
+<%= form_for(@recipe,url:new_recipe_path, method:'get') do |f| %>
+<%= f.hidden_field :name %>
+<%= f.hidden_field :explain %>
+<%= f.hidden_field :ingredients %>
+<%= f.hidden_field :directions %>
+<%= f.submit "戻る" , name:'back'%>
+<% end %>

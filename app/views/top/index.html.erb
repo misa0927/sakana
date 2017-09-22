@@ -1,0 +1,41 @@
+<section class="main-header">
+  <div class="header">
+  <p class="text-nowrap">今日の肴、</p>
+  <p class="text-nowrap">何にする？</p>
+</div>
+</section>
+<section class="intro">
+  <p>うれしいことがあった日も、</p>
+  <p>飲まないとやってられない時も、</p>
+  <p>何もなかった一日でも、</p>
+  <p>おうちで簡単に作って乾杯しよう</p>
+</section>
+<section class="container-fluid">
+  <div cllass="row">
+    <div class="contents-brock">
+      <div class="col-md-4">
+        <div class="main-contents">
+          <p><%= link_to "さかなレシピをさがす",recipes_path, class:"text-info" %></p>
+      </div>
+    </div>
+  </div>
+
+      <div class="contents-brock">
+        <div class="col-md-4">
+          <div class="main-contents">
+          <p><%= link_to "さかなについて",introductions_path, class:"text-info" %></p>
+      </div>
+    </div>
+  </div>
+
+
+      <div class="contents-brock">
+        <div class="col-md-4">
+          <div class="main-contents">
+            <p><%= link_to "さかなレシピを投稿する", new_recipe_path, class:"text-info" %></p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,23 @@
+<div class="container">
+  <p><%= notice %></p>
+
+  <h1>Recipes</h1>
+    <%= link_to "レシピを投稿する",new_recipe_path,class: 'btn btn-default'%>
+    <div class="space"></div>
+
+    <div class="row">
+    <% @recipes.each do |recipe| %>
+        <div class="col-md-3 col-sm-6">
+        <p><%= recipe.user.name %></p>
+        <p><%= recipe.name %></p>
+
+        <%= render partial: 'likes/like_links', locals: { recipe: recipe } %>
+
+        <% if user_signed_in? && current_user.id == recipe.user_id %>
+        <%= link_to "編集", edit_recipe_path(recipe.id), class:'btn btn-default btn-sm' %>
+        <%= link_to "削除", recipe_path(recipe.id), method: :delete,data:{confirm:'本当に削除していいですか？'}, class:'btn btn-default btn-sm' %>
+        <% end %>
+        </div>
+        <% end %>
+      </div>
+</div>
