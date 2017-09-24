@@ -1,9 +1,9 @@
-%div#recipe-js
+%div{ id:"recipe-js#{recipe.id}"}
 - if recipe.like_user(current_user.id)
-  = link_to recipe_like_path(recipe, recipe.like_user(current_user)), method: :delete, class: 'heart-icon', remote: true do
+  = link_to recipe_like_path(recipe, recipe.like_user(current_user)), method: :delete, remote: true do
     .btn.btn-default.fa.fa-heart.fa-x.heart-red
       =recipe.likes.count.to_s
 - else
-  =link_to recipe_likes_path(recipe), method: :post, class: 'empty-heart', remote: true do
-    .btn.btn-default.fa.fa-heart.fa-x.heart-color
+  = link_to recipe_likes_path(recipe), method: :post, remote: true do
+    .btn.btn-default.fa.fa-heart-o.fa-x.heart-color
       =recipe.likes.count.to_s

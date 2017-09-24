@@ -11,7 +11,7 @@
         <p><%= recipe.user.name %></p>
         <p><%= recipe.name %></p>
 
-        <%= render partial: 'likes/like_links', locals: { recipe: recipe } %>
+        <%= render 'likes/like_links', recipe: recipe  %>
 
         <% if user_signed_in? && current_user.id == recipe.user_id %>
         <%= link_to "編集", edit_recipe_path(recipe.id), class:'btn btn-default btn-sm' %>
