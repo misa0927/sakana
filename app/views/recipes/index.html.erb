@@ -8,6 +8,7 @@
     <div class="row">
     <% @recipes.each do |recipe| %>
         <div class="col-md-3 col-sm-6">
+        <%= profile_img(recipe.user) %>
         <p><%= recipe.user.name %></p>
         <p><%= recipe.name %></p>
 

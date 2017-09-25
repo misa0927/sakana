@@ -43,11 +43,13 @@ group :development, :test do
   gem 'spring'
 
   gem 'pry-rails'
-  gem 'better_errors'  
+  gem 'better_errors'
 end
 
 group :development do
   gem 'letter_opener_web'
+
+  gem 'dotenv-rails'
 end
 
 gem 'rails_12factor', group: :production
@@ -65,3 +67,10 @@ gem 'font-awesome-rails'
 gem 'rails_admin'
 
 gem 'cancan'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'mini_magick'

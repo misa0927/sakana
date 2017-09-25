@@ -5,7 +5,7 @@ class NoticeMailer < ApplicationMailer
   #
   #   en.notice_mailer.sendmail_recipe.subject
   #
-  def sendmail_recipe
+  def sendmail_recipe(recipe)
     @recipe = recipe
 
     mail to: "misatatesawa@gmail.com",
