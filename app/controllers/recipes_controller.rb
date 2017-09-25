@@ -19,6 +19,7 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
     if @recipe.save
       redirect_to recipes_path,notice:"レシピを投稿しました"
+      NoticeMailer.sendmail_recipe(@recipe).deliver
     else
       render 'new'
     end
