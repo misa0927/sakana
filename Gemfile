@@ -58,3 +58,7 @@ gem 'jquery-turbolinks'
 gem 'haml-rails'
 
 gem 'font-awesome-rails'
+
+gem 'rails_admin'
+
+gem 'cancan'
