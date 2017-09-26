@@ -7,14 +7,23 @@
 
     <div class="row">
     <% @recipes.each do |recipe| %>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
         <%= profile_img(recipe.user) %>
         <p><%= recipe.user.name %></p>
         <%= link_to recipe_path(recipe) do %>
         <p><%= recipe.name %></p>
         <% end %>
-        <%= render 'likes/like_links', recipe: recipe  %>
+        <div class="image-field">
+        <%if recipe.image? %>
+        <%= image_tag(recipe.image) %>
+        <% else %>
+        <%= image_tag 'no_image.png' %>
+        <% end %>
+        </div>
 
+        <div class="gap">
+        <%= render 'likes/like_links', recipe: recipe  %>
+      </div>
         <% if user_signed_in? && current_user.id == recipe.user_id %>
         <%= link_to "編集", edit_recipe_path(recipe.id), class:'btn btn-default btn-sm' %>
         <%= link_to "削除", recipe_path(recipe.id), method: :delete,data:{confirm:'本当に削除していいですか？'}, class:'btn btn-default btn-sm' %>

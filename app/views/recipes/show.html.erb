@@ -10,6 +10,7 @@
       <p class="left"><%= @recipe.ingredients %></p>
       <p class="left"><strong>作り方</strong></p>
       <p class="left"><%= @recipe.directions %></p>
+      <div class="left"><%= image_tag(@recipe.image) %>
       <p class="right">
         <strong>recipe by:</strong>
         <%= @recipe.user.name %>

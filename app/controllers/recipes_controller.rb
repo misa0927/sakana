@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipes_params)
     @recipe.user_id = current_user.id
+    @recipe.image.retrieve_from_cache! params[:cache][:image]
     if @recipe.save
       redirect_to recipes_path,notice:"レシピを投稿しました"
       NoticeMailer.sendmail_recipe(@recipe).deliver
@@ -54,7 +55,7 @@ end
 
   private
   def recipes_params
-    params.require(:recipe).permit(:name,:explain,:ingredients,:directions)
+    params.require(:recipe).permit(:name,:explain,:ingredients,:directions,:image,:image_cache)
   end
 
   def set_recipe
