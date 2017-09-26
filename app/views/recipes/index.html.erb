@@ -10,8 +10,9 @@
         <div class="col-md-3 col-sm-6">
         <%= profile_img(recipe.user) %>
         <p><%= recipe.user.name %></p>
+        <%= link_to recipe_path(recipe) do %>
         <p><%= recipe.name %></p>
-
+        <% end %>
         <%= render 'likes/like_links', recipe: recipe  %>
 
         <% if user_signed_in? && current_user.id == recipe.user_id %>
