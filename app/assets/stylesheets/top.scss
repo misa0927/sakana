@@ -40,29 +40,6 @@ footer{
     border: none;
 }
 
-.navbar-default{
-    .navbar-brand{
-        color: #ccc;
-        &:hover{
-            color: white;
-        }
-    }
-    .navbar-nav > li > a{
-        color: #ccc;
-        &:hover,&:focus{
-            color:#fff;
-        }
-    }
-    .navbar-nav > .open > a{
-        background-color: transparent;
-        color: #fff;
-        &:hover,&:focus{
-            background-color: transparent;
-            color: #fff;
-        }
-    }
-}
-
 @media (max-width: 767px){
     .navbar-default .navbar-nav .open .dropdown-menu > li > a{
         color: #ccc;
@@ -77,11 +54,6 @@ footer{
             background-color:transparent;
         }
     }
-
-}
-
-.brand{
-  display: none;
 }
 
 .search-box{
@@ -92,7 +64,8 @@ footer{
     padding-bottom: 10%;
     width:100%;
     background-size: cover;
-    background-color: #eff5fb;
+    background-image: url("main.jpg");
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -101,12 +74,12 @@ footer{
   width: auto;
   margin-top: 20px;
   padding-top: 10%;
-
 }
 
 .header p{
   color:#fafafa;
   font-size: 50px;
+  font-weight: 500;
 }
 
 .intro{
@@ -116,16 +89,34 @@ footer{
   padding: 80px;
 }
 
-.main-contents{
+.main-contents-1{
   display: block;
   margin-bottom: 20px;
   padding-top:10px;
   height: 200px;
-  background-color: #eff5fb;
-
+  background-image: url("beer.png");
+  background-repeat: no-repeat;
 }
 
-.main-contents  p{
+.main-contents-2{
+  display: block;
+  margin-bottom: 20px;
+  padding-top:10px;
+  height: 200px;
+  background-image: url("wine.png");
+  background-repeat: no-repeat;
+}
+
+.main-contents-3{
+  display: block;
+  margin-bottom: 20px;
+  padding-top:10px;
+  height: 200px;
+  background-image: url("drink.png");
+  background-repeat: no-repeat;
+}
+
+.link{
   font-size: 20px;
 }
 
