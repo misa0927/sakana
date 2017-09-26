@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :comments
       post :confirm, on: :collection
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'search' => 'recipe#search'
+    end
   end
 
   resources :contacts, only: [:new, :create] do

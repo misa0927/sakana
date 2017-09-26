@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @recipes = Recipe.search(params[:search])
   end
 
   def show
@@ -52,6 +53,7 @@ end
     @recipe = Recipe.new(recipes_params)
     render :new if @recipe.invalid?
   end
+
 
   private
   def recipes_params
